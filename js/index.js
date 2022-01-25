@@ -6,8 +6,8 @@ $(document).ready(function(){
             $("#billing_phone").css("background-color", "white");
             $("#billing_phone").css("border", "thin solid black");
 
-            $("#billing_phone").val("").css("color", "black");
-            $("p").text("phone number");
+            $("#billing_phone").val("");
+            $("p").text("phone number").css("color", "black");
         }else{
             $("#billing_phone").css("background-color", "#ffbfbf");
             $("#billing_phone").css("border", "thick solid #cc0033");
