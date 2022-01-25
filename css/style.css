@@ -1,0 +1,73 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background: linear-gradient(-45deg, rgba(255, 209, 172, 0.51),
+    rgba(230, 204, 255, 0.74), rgba(255, 153, 153, 0.58)) no-repeat;
+}
+#billing_phone {
+    height: 25px;
+    background-color: beige;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 23px;
+}
+#billing_phone:focus {
+    outline:0;
+    box-shadow: 1px 1px 2px black, 0 0 25px #190128, 0 0 5px #64008b;
+}
+p {
+    padding: 15px;
+}
+#app {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px;
+    justify-content: center;
+}
+.btn {
+    background-color: peachpuff;
+    color: floralwhite;
+    border-color: thistle;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    display: inline;
+    flex-wrap: wrap;
+    transition: transform ease-in 0.4s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px #FF00827F;
+    border-radius: 20px 7px;
+    padding: 10px;
+    margin: 20px ;
+    height: 45px;
+}
+@keyframes gradient {
+    0% {
+        background: radial-gradient(circle at center, rgba( 255, 125 , 125, 0 ) 0%, #fff 0%, #fff 100%);
+    }
+    25% {
+        background: radial-gradient(circle at center, rgba(217, 199, 255, 0.78) 24%, #fff 25%, #fff 100%);
+    }
+    50% {
+        background: radial-gradient(circle at center, rgba(255, 73, 230, 0.73) 49%, #fff 50%, #fff 100%);
+    }
+    75% {
+        background: radial-gradient(circle at center, rgb(242, 218, 209) 74%, #fff 75%, #fff 100%);
+    }
+    100% {
+        color: #fff;
+        background: radial-gradient(circle at center, rgba(154, 14, 135, 0.91) 99%, #fff 100%, #fff 100%);
+    }
+}
+.btn:hover {
+    background-color: #fff;
+    box-shadow: 0 2px 10px 5px #481ABCE0;
+    color: #000;
+}
+.btn:active {
+    animation: gradient 0.1s;
+    background: #330026;
+    color: #e6ccff;
+    opacity: 0.7;
+}
+.btn:focus {
+    outline:0;
+}
