@@ -31,7 +31,7 @@ $(document).ready(function () {
                         });
                         $("#billing_phone").val("");
                         $("p").text("UA phone number").css("color", "black");
-                    }, 1700);
+                    }, 5000);
                 }
             }
         }
