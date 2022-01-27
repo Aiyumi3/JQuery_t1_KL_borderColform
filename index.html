@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Title</title>
+    <script src="https://unpkg.com/libphonenumber-js@1.9.6/bundle/libphonenumber-max.js"></script>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-            crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.9.44/index.common.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/parcel-bundler@1.12.5/index.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
 <div id="app">
-    <p>phone number: </p>
+    <p>UA phone number: </p>
     <input type="tel" id="billing_phone" name="phone" maxlength="13" value="" placeholder="+38__________" autocomplete="off"/>
     <button id="check" class="btn">check</button>
 </div>
@@ -21,5 +19,3 @@
 <script src="./js/index.js"></script>
 </body>
 </html>
-
-
