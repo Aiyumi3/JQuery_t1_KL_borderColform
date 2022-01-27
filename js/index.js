@@ -32,7 +32,7 @@ $(document).ready(function(){
                     });
                     $("#billing_phone").val("");
                     $("p").text("phone number").css("color", "black");
-                }, 1700);
+                }, 5000);
             }
         }
     });
