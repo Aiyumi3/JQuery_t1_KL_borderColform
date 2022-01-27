@@ -12,27 +12,27 @@
 
    
 
-$(document).ready(function(){
-    $("#check").click(function(){
-        const val = $("#billing_phone").val();
-        try {
-            libphonenumber.parsePhoneNumberWithError(val, "UA");
-            $("#billing_phone").val("");
-        }catch (error){
-            if(error instanceof libphonenumber.ParseError){
-                $("#billing_phone").css({
-                    "background-color": "#ffbfbf",
-                    "border": "thick solid #cc0033"
-                });
-                $("p").text("error").css("color", "#cc0033");
-                setTimeout(function () {
+$(document).ready(function () {
+    $(document.body).on("focusin focusout change blur","#billing_phone", function (e) {
+        if (e.target.value.length) {
+            try {
+                libphonenumber.parsePhoneNumberWithError(e.target.value, "UA");
+            }catch (error){
+                if(error instanceof libphonenumber.ParseError){
                     $("#billing_phone").css({
-                        "background-color": "white",
-                        "border": "thin solid black"
+                        "background-color": "#ffbfbf",
+                        "border": "thick solid #cc0033"
                     });
-                    $("#billing_phone").val("");
-                    $("p").text("phone number").css("color", "black");
-                }, 5000);
+                    $("p").text("error").css("color", "#cc0033");
+                    setTimeout(function () {
+                        $("#billing_phone").css({
+                            "background-color": "white",
+                            "border": "thin solid black"
+                        });
+                        $("#billing_phone").val("");
+                        $("p").text("UA phone number").css("color", "black");
+                    }, 1700);
+                }
             }
         }
     });
