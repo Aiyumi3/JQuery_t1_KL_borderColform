@@ -1,4 +1,3 @@
-
 /**
  * Задача:
  * На сайте поле ввода номера телефона проверяется на правильность
@@ -9,9 +8,21 @@
  * либа выбросит NOT_A_NUMBER
  * Нам необходимо перехватить эти ошибки и просто делать красный border
  */
-
-   
-
+const errCol = () => {
+    $("#billing_phone").css({
+        "background-color": "#ffbfbf",
+        "border": "thick solid #cc0033"
+    });
+    $("p").text("error").css("color", "#cc0033");
+    setTimeout(function () {
+        $("#billing_phone").css({
+            "background-color": "white",
+            "border": "thin solid black"
+        });
+        $("#billing_phone").val("");
+        $("p").text("UA phone number").css("color", "black");
+    }, 5000);
+};
 $(document).ready(function () {
     $(document.body).on("focusin focusout change blur","#billing_phone", function (e) {
         if (e.target.value.length) {
@@ -19,20 +30,11 @@ $(document).ready(function () {
                 libphonenumber.parsePhoneNumberWithError(e.target.value, "UA");
             }catch (error){
                 if(error instanceof libphonenumber.ParseError){
-                    $("#billing_phone").css({
-                        "background-color": "#ffbfbf",
-                        "border": "thick solid #cc0033"
-                    });
-                    $("p").text("error").css("color", "#cc0033");
-                    setTimeout(function () {
-                        $("#billing_phone").css({
-                            "background-color": "white",
-                            "border": "thin solid black"
-                        });
-                        $("#billing_phone").val("");
-                        $("p").text("UA phone number").css("color", "black");
-                    }, 5000);
+                    errCol();
                 }
+            }
+            if (libphonenumber.parsePhoneNumber(e.target.value, "UA").isValid("UA") === false){
+                errCol();
             }
         }
     });
