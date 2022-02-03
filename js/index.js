@@ -33,9 +33,7 @@ $(document).ready(function () {
                     errCol();
                 }
             }
-            if (libphonenumber.parsePhoneNumber(e.target.value, "UA").isValid("UA") === false ||
-                $("#billing_phone").val().match(/[^+]380[0-9]{9}/ig) || $("#billing_phone").val().match(/380[0-9]{9}[^+]/ig) ||
-                $("#billing_phone").val().match(/[^+]0[0-9]{9}/ig) || $("#billing_phone").val().match(/0[0-9]{9}[^+]/ig)){
+            if (libphonenumber.parsePhoneNumber(e.target.value, "UA").isValid("UA") === false ){
                 errCol();
             }
         }
